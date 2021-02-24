@@ -47,7 +47,6 @@ public class GymArrayList extends GymList{
 
     @Override
     public void remove(Object o) {
-
     }
 
     @Override
@@ -72,12 +71,15 @@ public class GymArrayList extends GymList{
 
     @Override
     protected void clear() {
-
+        for(int i = 0; i < array.length; i++){
+            array[i] = null;
+        }
     }
+
+
 
     @Override
     public void order() {
-
     }
 
     @Override
