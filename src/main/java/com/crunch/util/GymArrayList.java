@@ -22,7 +22,7 @@ public class GymArrayList extends GymList{
 
     @Override
     public int size() {
-        return 0;
+        return array.length;
     }
 
     @Override
