@@ -84,4 +84,18 @@ public class GymArrayList extends GymList{
     public int indexOf(User u) {
         return 0;
     }
+
+    // returns the array
+    public Object[] toArray() {
+        return array;
+    }
+
+    // returns a String array of the .toString() of each element
+    public String[] getStringArray(){
+        String[] result = new String[array.length];
+        for (int i = 0; i < array.length; i++){
+            result[i] = array[i].toString();
+        }
+        return result;
+    }
 }
