@@ -5,6 +5,13 @@ import com.crunch.model.User;
 public class GymArrayList extends GymList{
     protected User[] array;
 
+    public GymArrayList(){
+        array = new User[0];
+    }
+    public GymArrayList(User[] array){
+        this.array = array;
+    }
+
     @Override
     public User get(Object o) {
         return null;
@@ -17,7 +24,20 @@ public class GymArrayList extends GymList{
 
     @Override
     public void add(User u) throws Exception {
+        User[] newArray = new User[array.length + 1];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        // add new element
+        newArray[array.length] = u;
+        array = newArray;
+    }
 
+    // add a User array to the end of the current
+    public void add(User[] u) {
+        User[] newArray = new User[array.length + u.length];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        System.arraycopy(u, 0, newArray, array.length, u.length);
+        // add new elements
+        array = newArray;
     }
 
     @Override
