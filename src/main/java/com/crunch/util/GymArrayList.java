@@ -2,14 +2,15 @@ package com.crunch.util;
 
 import com.crunch.model.User;
 
-public class GymArrayList extends GymList{
+public class GymArrayList extends GymList {
     protected User[] array;
     protected int currentIndex = 0;
 
-    public GymArrayList(){
+    public GymArrayList() {
         array = new User[0];
     }
-    public GymArrayList(User[] array){
+
+    public GymArrayList(User[] array) {
         this.array = array;
     }
 
@@ -71,6 +72,7 @@ public class GymArrayList extends GymList{
             currentIndex++;
         }
     }
+
     public void previousIndex() {
         if (array[(currentIndex - 1)] != null && (currentIndex - 1) > 0) {
             currentIndex--;
@@ -84,8 +86,8 @@ public class GymArrayList extends GymList{
 
     @Override
     boolean isEmpty() {
-        for (User eachUser: array) {
-            if (eachUser != null){
+        for (User eachUser : array) {
+            if (eachUser != null) {
                 return false;
             }
         }
@@ -94,18 +96,17 @@ public class GymArrayList extends GymList{
 
     @Override
     protected void clear() {
-        for(int i = 0; i < array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             array[i] = null;
         }
     }
 
 
-
     @Override
     public void order() {
         for (int i = 0; i < array.length; i++) {
-            for (int j = i+1; j < array.length; j++) {
-                if(array[i].getUsername().compareTo(array[j].getUsername()) > 0) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i].getUsername().compareTo(array[j].getUsername()) > 0) {
                     User temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
@@ -117,12 +118,14 @@ public class GymArrayList extends GymList{
     //Returns index of user in array or -1 if user isn't found
     @Override
     public int indexOf(User u) {
-        for(int i = 0; i < array.length; i++) {
-            if(array[i].equals(u)) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals(u)) {
                 return i;
             } else {
                 return -1;
             }
         }
+
+        return -1;
     }
 }
