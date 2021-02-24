@@ -5,9 +5,12 @@ import com.crunch.model.User;
 public class GymTreeSet extends GymSet{
 
     private int max_capacity = 10;
+    private User users[];
     private int current_occupancy = 0;
 
-    User users[max_capacity];
+    public int get_max_capacity() {return max_capacity;}
+
+
 
 
 
