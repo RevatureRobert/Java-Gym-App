@@ -45,9 +45,33 @@ public class GymArrayList extends GymList{
         return array.length;
     }
 
-    @Override
+    // removes any element of the internal array that matches o by making a new array of reduced size without those elements
     public void remove(Object o) {
-
+        int removalIndex = -1;
+        // number of items removed
+        int removalCount = 0;
+        boolean loop = true;
+        User[] modArray = array;
+        User[] result = array;
+        do {
+            for (int i = removalIndex+1; i < array.length; i++) {
+                // check if this is last loop
+                if (i == array.length-1) {
+                    loop = false;
+                }
+                if (array[i].equals(o)) {
+                    removalIndex = i;
+                    removalCount++;
+                    break;
+                }
+            }
+            if(true){
+                result = new User[result.length-removalCount];
+                System.arraycopy(modArray, 0, result, 0, removalIndex-removalCount+1);
+                System.arraycopy(modArray, removalIndex+1, result, 0, array.length-1);
+            }
+        } while(loop);
+        array = result;
     }
 
     @Override
