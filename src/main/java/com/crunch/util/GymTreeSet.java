@@ -2,23 +2,43 @@ package com.crunch.util;
 
 import com.crunch.model.User;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class GymTreeSet extends GymSet{
 
     private int max_capacity = 10;
     private int current_occupancy = 0;
 
-    User users[max_capacity];
-
+    User[] users = new User[max_capacity];
 
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        try{
+            /**
+             *
+             * Im not really sure how to handle a throwable
+             * TODO: How to handle a Throwable;
+            **/
+            Throwable throwing = new Throwable("Something went wrong");
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            GymTreeSet that = (GymTreeSet) o;
+            return max_capacity == that.max_capacity && current_occupancy == that.current_occupancy && Arrays.equals(users, that.users);
+        }
+        catch(Throwable th  ){
+            System.out.println(th.getMessage());
+            return false;
+        }
+
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public int hashCode() {
+        int result = Objects.hash(max_capacity, current_occupancy);
+        result = 31 * result + Arrays.hashCode(users);
+        return result;
     }
 
     @Override
