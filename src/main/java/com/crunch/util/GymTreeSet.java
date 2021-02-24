@@ -66,7 +66,24 @@ public class GymTreeSet extends GymSet{
 
     @Override
     public String toString() {
-        return null;
+        // TODO : Not if to make it say something like NO USERs or something;
+        if(this.isEmpty()){
+            return "";
+        }
+        String tempStr = "";
+
+        // go through the array until you hit the last user
+        for(int i = 0; i <= current_occupancy ; i++){
+            if(i == 0){
+                tempStr = users[i].getUsername();
+            }
+            else {
+                tempStr += " " + users[i].getUsername();
+
+            }
+        }
+
+        return tempStr;
     }
 
     @Override
