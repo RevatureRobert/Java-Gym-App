@@ -96,8 +96,15 @@ public class GymArrayList extends GymList{
         }
     }
 
+    //Returns index of user in array or -1 if user isn't found
     @Override
     public int indexOf(User u) {
-        return 0;
+        for(int i = 0; i < array.length; i++) {
+            if(array[i].equals(u)) {
+                return i;
+            } else {
+                return -1;
+            }
+        }
     }
 }
