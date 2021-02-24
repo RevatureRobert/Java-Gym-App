@@ -70,7 +70,7 @@ public class GymArrayList extends GymList {
             if(true){
                 result = new User[result.length-removalCount];
                 System.arraycopy(modArray, 0, result, 0, removalIndex-removalCount+1);
-                System.arraycopy(modArray, removalIndex+1, result, 0, array.length-1);
+                System.arraycopy(modArray, removalIndex-removalCount+2, result, removalIndex-removalCount+1, array.length-1);
             }
         } while(loop);
         array = result;
@@ -107,6 +107,12 @@ public class GymArrayList extends GymList {
     @Override
     public String toString() {
         return null;
+        String[] strings = getStringArray();
+        String result = "";
+        for (String s : strings) {
+            result.concat(s+System.getProperty("line.separator"));
+        }
+        return result;
     }
 
     @Override
