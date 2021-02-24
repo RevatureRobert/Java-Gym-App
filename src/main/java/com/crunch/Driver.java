@@ -2,6 +2,7 @@ package com.crunch;
 
 import com.crunch.ui.LoginMenu;
 import com.crunch.ui.SignUpMenu;
+import com.crunch.util.TestArrayList;
 
 import java.util.Scanner;
 
@@ -20,8 +21,9 @@ public class Driver {
 //        System.out.println(newUser);
 //
 //        System.out.println("finished");
+        TestArrayList.test();
 
-        SignUpMenu mm = new SignUpMenu();
+/*        SignUpMenu mm = new SignUpMenu();
         LoginMenu lm = new LoginMenu();
         Scanner scan = new Scanner(System.in);
         boolean continueLoop = true;
@@ -36,7 +38,7 @@ public class Driver {
                 lm.showMenu(scan);
             }
         } while(continueLoop);
-
+*/
     }
 
 
