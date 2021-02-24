@@ -66,7 +66,12 @@ public class GymArrayList extends GymList{
 
     @Override
     boolean isEmpty() {
-        return false;
+        for (User eachUser: array) {
+            if (eachUser != null){
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
