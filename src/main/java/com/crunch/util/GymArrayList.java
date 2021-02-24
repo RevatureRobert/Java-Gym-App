@@ -49,13 +49,33 @@ public class GymArrayList extends GymList {
 
     // removes any element of the internal array that matches o by making a new array of reduced size without those elements
     public void remove(Object o) {
+        /*
+        int saveIndex = currentIndex;
+        currentIndex = 0;
+        User u;
+        User[] result = array;
+        User[] prevArray = array;
+        for(int i = 0; i < array.length; i++) {
+            u = next();
+            if(u == null){
+
+            }else if(o.equals(u)){
+                System.arraycopy(
+            }
+        }
+
+        currentIndex = saveIndex;
+        array = result;
+        */
         int removalIndex = -1;
-        // number of items removed
-        int removalCount = 0;
+        // number of items removed -1
+        int removalCount = -1;
         boolean loop = true;
-        User[] modArray = array;
+        boolean remove;
+        User[] prevArray;
         User[] result = array;
         do {
+            remove = false;
             for (int i = removalIndex+1; i < array.length; i++) {
                 // check if this is last loop
                 if (i == array.length-1) {
@@ -64,13 +84,17 @@ public class GymArrayList extends GymList {
                 if (array[i].equals(o)) {
                     removalIndex = i;
                     removalCount++;
+                    remove = true;
                     break;
                 }
             }
-            if(true){
-                result = new User[result.length-removalCount];
-                System.arraycopy(modArray, 0, result, 0, removalIndex-removalCount+1);
-                System.arraycopy(modArray, removalIndex-removalCount+2, result, removalIndex-removalCount+1, array.length-1);
+            if(remove){
+                // result will be one less in length for each removal we find
+                prevArray = result;
+                result = new User[result.length-1];
+                // prevArray will have length of (array - removalCount + 1)
+                System.arraycopy(prevArray, 0, result, 0, removalIndex-removalCount);
+                System.arraycopy(prevArray, removalIndex-removalCount+1, result, removalIndex-removalCount+1, result.length-(removalIndex-removalCount));
             }
         } while(loop);
         array = result;
