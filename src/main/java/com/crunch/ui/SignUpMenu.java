@@ -35,11 +35,7 @@ public class SignUpMenu extends AbstractMenu{
         String phoneNumber = scan.nextLine();
         System.out.println("provide email");
         String email = scan.nextLine();
-        try {
-            us.makeUser(username, password, phoneNumber, email);
-        } catch (Exception e) {
-            System.out.println("User Already Exists, cancelling");
-        }
-        System.out.println("Successfully registered " + username);
+        System.out.println(us.makeUser(username, password, phoneNumber, email) ?
+                        "successfully made "+username :
+                        "cancelled registration");
     }
-}
