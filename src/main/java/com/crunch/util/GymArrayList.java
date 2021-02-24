@@ -2,13 +2,15 @@ package com.crunch.util;
 
 import com.crunch.model.User;
 
-public class GymArrayList extends GymList{
+public class GymArrayList extends GymList {
     protected User[] array;
+    protected int currentIndex = 0;
 
-    public GymArrayList(){
+    public GymArrayList() {
         array = new User[0];
     }
-    public GymArrayList(User[] array){
+
+    public GymArrayList(User[] array) {
         this.array = array;
     }
 
@@ -76,42 +78,60 @@ public class GymArrayList extends GymList{
 
     @Override
     public User next() {
+        if (array[currentIndex + 1] != null) {
+            return array[currentIndex + 1];
+        }
         return null;
     }
 
     @Override
     public User previous() {
+        if (array[currentIndex - 1] != null) {
+            return array[currentIndex - 1];
+        }
         return null;
+    }
+
+    public void nextIndex() {
+        if (array[currentIndex + 1] != null && (currentIndex + 1) < array.length) {
+            currentIndex++;
+        }
+    }
+
+    public void previousIndex() {
+        if (array[(currentIndex - 1)] != null && (currentIndex - 1) > 0) {
+            currentIndex--;
+        }
     }
 
     @Override
     public String toString() {
-        String[] strings = getStringArray();
-        String result = "";
-        for (String s : strings) {
-            result.concat(s+System.getProperty("line.separator"));
-        }
-        return result;
+        return null;
     }
 
     @Override
     boolean isEmpty() {
-        if (array.length == 0) {
-            return true;
+        for (User eachUser : array) {
+            if (eachUser != null) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 
     @Override
     protected void clear() {
-
+        for (int i = 0; i < array.length; i++) {
+            array[i] = null;
+        }
     }
+
 
     @Override
     public void order() {
         for (int i = 0; i < array.length; i++) {
-            for (int j = i+1; j < array.length; j++) {
-                if(array[i].getUsername().compareTo(array[j].getUsername())>0) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i].getUsername().compareTo(array[j].getUsername()) > 0) {
                     User temp = array[i];
                     array[i] = array[j];
                     array[j] = temp;
@@ -120,9 +140,18 @@ public class GymArrayList extends GymList{
         }
     }
 
+    //Returns index of user in array or -1 if user isn't found
     @Override
     public int indexOf(User u) {
-        return 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].equals(u)) {
+                return i;
+            } else {
+                return -1;
+            }
+        }
+
+        return -1;
     }
 
     // returns the array
