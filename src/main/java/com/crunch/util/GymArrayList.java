@@ -62,7 +62,12 @@ public class GymArrayList extends GymList{
 
     @Override
     public String toString() {
-        return null;
+        String[] strings = getStringArray();
+        String result = "";
+        for (String s : strings) {
+            result.concat(s+System.getProperty("line.separator"));
+        }
+        return result;
     }
 
     @Override
