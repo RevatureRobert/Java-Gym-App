@@ -3,9 +3,12 @@ package com.crunch.util;
 import com.crunch.model.User;
 
 public class GymArrayList extends GymList{
+    protected User[] array;
+
     @Override
-    public User get(Object o) {
-        return null;
+    // Get User at index i of the internal array
+    public User get(int i) {
+        return array[i];
     }
 
     @Override
