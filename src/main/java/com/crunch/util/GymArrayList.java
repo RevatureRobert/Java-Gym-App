@@ -72,6 +72,9 @@ public class GymArrayList extends GymList{
 
     @Override
     boolean isEmpty() {
+        if (array.length == 0) {
+            return true;
+        }
         return false;
     }
 
