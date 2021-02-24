@@ -49,24 +49,6 @@ public class GymArrayList extends GymList {
 
     // removes any element of the internal array that matches o by making a new array of reduced size without those elements
     public void remove(Object o) {
-        /*
-        int saveIndex = currentIndex;
-        currentIndex = 0;
-        User u;
-        User[] result = array;
-        User[] prevArray = array;
-        for(int i = 0; i < array.length; i++) {
-            u = next();
-            if(u == null){
-
-            }else if(o.equals(u)){
-                System.arraycopy(
-            }
-        }
-
-        currentIndex = saveIndex;
-        array = result;
-        */
         int removalIndex = -1;
         // number of items removed -1
         int removalCount = -1;
