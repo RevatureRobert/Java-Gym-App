@@ -5,7 +5,7 @@ import com.crunch.model.User;
 public class GymTreeSet extends GymSet{
 
     private int max_capacity = 10;
-
+    private int current_occupancy = 0;
 
     User users[max_capacity];
 
@@ -39,12 +39,14 @@ public class GymTreeSet extends GymSet{
 
     @Override
     public void add(User u) throws Exception {
-
+        if(current_occupancy < max_capacity){
+            users[current_occupancy] = u;
+        }
     }
 
     @Override
     public int size() {
-        return 0;
+        return current_occupancy;
     }
 
     @Override
@@ -69,12 +71,16 @@ public class GymTreeSet extends GymSet{
 
     @Override
     boolean isEmpty() {
+        if(users[0] == null){
+            return true;
+        }
         return false;
     }
 
     @Override
     protected void clear() {
-
+        users = new User[max_capacity];
+        current_occupancy = 0;
     }
 
     @Override
