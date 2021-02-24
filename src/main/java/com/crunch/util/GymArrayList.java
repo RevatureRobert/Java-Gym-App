@@ -4,6 +4,7 @@ import com.crunch.model.User;
 
 public class GymArrayList extends GymList{
     protected User[] array;
+    protected int currentIndex = 0;
 
     public GymArrayList(){
         array = new User[0];
@@ -51,12 +52,29 @@ public class GymArrayList extends GymList{
 
     @Override
     public User next() {
+        if (array[currentIndex + 1] != null) {
+            return array[currentIndex + 1];
+        }
         return null;
     }
 
     @Override
     public User previous() {
+        if (array[currentIndex - 1] != null) {
+            return array[currentIndex - 1];
+        }
         return null;
+    }
+
+    public void nextIndex() {
+        if (array[currentIndex + 1] != null && (currentIndex + 1) < array.length) {
+            currentIndex++;
+        }
+    }
+    public void previousIndex() {
+        if (array[(currentIndex - 1)] != null && (currentIndex - 1) > 0) {
+            currentIndex--;
+        }
     }
 
     @Override
