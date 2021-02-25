@@ -8,6 +8,7 @@ import java.util.Objects;
 public class GymTreeSet extends GymSet{
 
     private int max_capacity = 10;
+    private User users[];
     private int current_occupancy = 0;
 
     User[] users = new User[max_capacity];
@@ -122,26 +123,23 @@ public class GymTreeSet extends GymSet{
 
     @Override
     protected boolean checkDuplicates() {
-        String tempUserName = "";
+       
 
         for(int i = 0 ; i <= current_occupancy ; i++){
-            if (users[i] == null){
+            for(int j = 1 ; j <=current_occupancy;j++){
+             if (users[i] == null || users[j) == null{
                 // Something is wrong if there is a null in the tree
                 break;
             }
-            if ( i == 0){
-                tempUserName = users[i].getUsername();
-            }
-            else {
-
-                if(tempUserName.equals(users[i].getUsername())){
-                    return true;
-                }
-                else {
-                    tempUserName = users[i].getUsername();
-                }
-
-            }
+               if(i == j){
+               return true;
+              }
+               if(users[i].getUsername().equals(users[j].getUsername())){
+                return true;
+               }                             
+                                
+           
+            
         }
 
         return false;
