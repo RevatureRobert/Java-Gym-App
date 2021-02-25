@@ -66,7 +66,7 @@ public class GymArrayList extends GymList {
 
     }
 
-    // repaces array with an array without the element at index i an with length -1
+    // replaces array with an array without the element at index i an with length -1
     // should throw an exception if the index given is out of scope
     public void remove(int i) {
         User[] result = new User[array.length-1];
