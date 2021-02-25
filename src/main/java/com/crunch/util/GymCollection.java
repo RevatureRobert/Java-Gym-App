@@ -3,6 +3,7 @@ package com.crunch.util;
 import com.crunch.model.User;
 
 import java.util.Collection;
+import java.util.TreeSet;
 
 /**
  * should have
@@ -15,8 +16,6 @@ import java.util.Collection;
  *
  */
 public abstract class GymCollection {
-
-
 
     /**
      * Optional size number for non expandable subclasses
