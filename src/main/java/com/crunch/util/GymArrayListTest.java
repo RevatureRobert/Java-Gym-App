@@ -7,6 +7,7 @@ public abstract class GymArrayListTest {
 
         GymArrayList al = new GymArrayList();
 
+        // create test Users
         User kevin = new User("Kevin");
         User luke = new User("Luke");
         User mikayla = new User("Mikayla");
@@ -17,6 +18,7 @@ public abstract class GymArrayListTest {
 
         System.out.println("ArrayList is empty: " + al.isEmpty() + "\n");
 
+        // add() test
         al.add(ronald);
         al.add(steven);
         al.add(kevin);
@@ -32,11 +34,26 @@ public abstract class GymArrayListTest {
 
         printArray(al);
 
+        // remove() test
         al.remove(noel);
 
         printArray(al);
 
+        // remove() multiple test
+        al.add(nate);
+        al.add(noel);
+        al.add(luke);
+        al.add(nate);
+        al.add(ronald);
+        al.add(steven);
 
+        printArray(al);
+
+        al.remove(nate);
+
+        printArray(al);
+
+        // order() test
         al.order();
 
         printArray(al);
