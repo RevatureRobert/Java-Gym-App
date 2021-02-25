@@ -49,21 +49,37 @@ public class GymArrayList extends GymList {
 
     // removes any element of the internal array that matches o by making a new array of reduced size without those elements
     public void remove(Object o) {
-        int index = indexOf((User) o);
-        User[] temp = new User[array.length - 1];
-
-        for (int i = index; i < (array.length - 1); i++) {
-            array[i] = array[i + 1];
-        }
-
-        array[array.length - 1] = null;
-
-        for (int i = 0; i < temp.length; i++) {
-            temp[i] = array[i];
-        }
-
-        array = temp;
-
+        int removalIndex = -1;
+        // number of items removed -1
+        int removalCount = -1;
+        boolean loop = true;
+        boolean remove;
+        User[] prevArray;
+        User[] result = array;
+        do {
+            remove = false;
+            for (int i = removalIndex+1; i < array.length; i++) {
+                // check if this is last loop
+                if (i == array.length-1) {
+                    loop = false;
+                }
+                if (array[i].equals(o)) {
+                    removalIndex = i;
+                    removalCount++;
+                    remove = true;
+                    break;
+                }
+            }
+            if(remove){
+                // result will be one less in length for each removal we find
+                prevArray = result;
+                result = new User[result.length-1];
+                // prevArray will have length of (array - removalCount + 1)
+                System.arraycopy(prevArray, 0, result, 0, removalIndex-removalCount);
+                System.arraycopy(prevArray, removalIndex-removalCount+1, result, removalIndex-removalCount+1, result.length-(removalIndex-removalCount));
+            }
+        } while(loop);
+        array = result;
     }
 
     // replaces array with an array without the element at index i an with length -1
