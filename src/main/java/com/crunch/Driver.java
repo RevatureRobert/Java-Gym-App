@@ -37,6 +37,8 @@ public class Driver {
             }
         } while(continueLoop);
 
+       // GymArrayListTest.testArray();
+
     }
 
 
