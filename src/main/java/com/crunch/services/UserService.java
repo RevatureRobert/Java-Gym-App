@@ -15,8 +15,6 @@ import com.crunch.model.User;
  // TODO: update to members
  // TODO: update information
  // TODO: schedule workout times/sessions
-
-
  */
 public class UserService {
 
