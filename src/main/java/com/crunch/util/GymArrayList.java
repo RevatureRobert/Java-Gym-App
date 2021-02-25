@@ -66,6 +66,15 @@ public class GymArrayList extends GymList {
 
     }
 
+    // repaces array with an array without the element at index i an with length -1
+    // should throw an exception if the index given is out of scope
+    public void remove(int i) {
+        User[] result = new User[array.length-1];
+        System.arraycopy(array, 0, result, 0, i);
+        System.arraycopy(array, i+1, result, i, array.length-i-1);
+        array = result;
+    }
+
     @Override
     public User next() {
         if (array[currentIndex + 1] != null) {
