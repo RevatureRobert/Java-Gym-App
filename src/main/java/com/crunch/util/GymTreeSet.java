@@ -157,11 +157,11 @@ public class GymTreeSet extends GymSet {
         current_occupancy = 0;
     }
 
-    public void sort(User u){
+    public void sort(){
         User temp;
-        for(int i=0; i > users.length; i++){
-            for(int j=i +1; j < users.length;j++){
-                if(users[i].getUsername.compareTo(users[j].getUsername())> 0){
+        for(int i=0; i > current_occupancy; i++){
+            for(int j=i +1; j < current_occupancy;j++){
+                if(users[i].getUsername().compareTo(users[j].getUsername())> 0){
                     temp = users[i];
                     users[i] = users[j];
                     users[j]= temp;
