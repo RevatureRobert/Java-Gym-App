@@ -76,7 +76,7 @@ public class GymArrayList extends GymList {
                 result = new User[result.length-1];
                 // prevArray will have length of (array - removalCount + 1)
                 System.arraycopy(prevArray, 0, result, 0, removalIndex-removalCount);
-                System.arraycopy(prevArray, removalIndex-removalCount+1, result, removalIndex-removalCount+1, result.length-(removalIndex-removalCount));
+                System.arraycopy(prevArray, removalIndex-removalCount+1, result, removalIndex-removalCount, result.length-(removalIndex-removalCount));
             }
         } while(loop);
         array = result;
