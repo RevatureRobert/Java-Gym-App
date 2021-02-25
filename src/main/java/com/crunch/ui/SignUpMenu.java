@@ -39,3 +39,4 @@ public class SignUpMenu extends AbstractMenu{
                         "successfully made "+username :
                         "cancelled registration");
     }
+}
