@@ -1,4 +1,4 @@
-package com.crunch.services;
+package com.crunch.service;
 
 import com.crunch.exception.CurrentlyCheckedInException;
 import com.crunch.model.User;

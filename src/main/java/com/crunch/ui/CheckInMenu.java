@@ -2,9 +2,8 @@ package com.crunch.ui;
 
 import com.crunch.exception.CurrentlyCheckedInException;
 import com.crunch.model.User;
-import com.crunch.services.CalendarService;
+import com.crunch.service.CalendarService;
 
-import java.util.Currency;
 import java.util.Scanner;
 
 public class CheckInMenu extends AbstractMenu{

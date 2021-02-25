@@ -23,6 +23,7 @@ import java.util.Objects;
 public class User extends Object {
 
     private MembershipType membership;
+    // TODO: Create constraints for the username to abide by
     private String username;
     private String password;
     // TODO: make a data structure to define the available and interested activities

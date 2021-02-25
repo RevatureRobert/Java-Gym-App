@@ -1,4 +1,4 @@
-package com.crunch.services;
+package com.crunch.service;
 
 import com.crunch.model.User;
 
@@ -29,6 +29,19 @@ public class UserService {
         return findUserByUsername(username) != null;
     }
 
+    /*
+            If given a valid user (one in the array)
+                It will find the correct User
+            If given a non valid user (one not in the array)
+                it will return null
+            If there are constraints (below the min char count,
+                over the max char count, null, etc.) on the username,
+                this method should reflect that and
+                throw a Runtime exception if the constraints are
+                violated.
+
+
+     */
     public User findUserByUsername(String username){
         // O(n) time complexity O(1) space complexity
         if(currentIndex > -1) {

@@ -1,7 +1,7 @@
 package com.crunch.ui;
 
 import com.crunch.model.User;
-import com.crunch.services.UserService;
+import com.crunch.service.UserService;
 
 import java.util.Scanner;
 
