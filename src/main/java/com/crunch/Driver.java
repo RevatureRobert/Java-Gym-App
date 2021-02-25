@@ -2,8 +2,6 @@ package com.crunch;
 
 import com.crunch.ui.LoginMenu;
 import com.crunch.ui.SignUpMenu;
-import com.crunch.util.GymArrayList;
-import com.crunch.util.GymArrayListTest;
 
 import java.util.Scanner;
 
@@ -23,7 +21,7 @@ public class Driver {
 //
 //        System.out.println("finished");
 
-        /*SignUpMenu mm = new SignUpMenu();
+        SignUpMenu mm = new SignUpMenu();
         LoginMenu lm = new LoginMenu();
         Scanner scan = new Scanner(System.in);
         boolean continueLoop = true;
@@ -37,9 +35,9 @@ public class Driver {
             } else if(answer.equalsIgnoreCase("login")) {
                 lm.showMenu(scan);
             }
-        } while(continueLoop);*/
+        } while(continueLoop);
 
-        GymArrayListTest.testArray();
+       // GymArrayListTest.testArray();
 
     }
 
