@@ -6,7 +6,7 @@ import javax.xml.soap.Node;
 import java.util.HashSet;
 
 public class GymHashSet extends GymSet{
-    //TODO: this class needs and Iterator!!
+    //TODO: this class needs an Iterator!!
     private static final int INITIAL_CAPACITY = 8;
     private int size;
     private MyNode<User>[] nodes;
