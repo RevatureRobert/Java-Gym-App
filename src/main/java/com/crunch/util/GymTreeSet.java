@@ -7,17 +7,13 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class GymTreeSet extends GymSet{
-=======
-public class GymTreeSet extends GymSet {
->>>>>>> Stashed changes
+
 
     private int max_capacity = 10;
     private User users[];
     private int current_occupancy = 0;
 
-<<<<<<< Updated upstream
-    User[] users = new User[max_capacity];
-=======
+
     public GymTreeSet(){
         users = new User[max_capacity];
     }
@@ -25,7 +21,6 @@ public class GymTreeSet extends GymSet {
     public int get_max_capacity() {
         return max_capacity;
     }
->>>>>>> Stashed changes
 
 
     @Override
