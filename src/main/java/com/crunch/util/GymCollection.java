@@ -15,24 +15,30 @@ import java.util.TreeSet;
  * View all elements of the collection
  *
  */
-public abstract class GymCollection {
+
+/*
+
+        TODO: refactor and give generics
+ */
+
+public abstract class GymCollection<T> {
 
     /**
      * Optional size number for non expandable subclasses
      */
     protected int maxSize;
 
-    public abstract User get(Object o);
+    public abstract T get(T o);
 
-    public abstract void add(User u) throws Exception;
+    public abstract void add(T u) throws Exception;
 
     public abstract int size();
 
-    public abstract void remove(Object o);
+    public abstract void remove(T o);
 
-    public abstract User next();
+    public abstract T next();
 
-    public abstract User previous();
+    public abstract T previous();
 
     public abstract String toString();
 

@@ -2,7 +2,7 @@ package com.crunch.util;
 
 import com.crunch.model.User;
 
-public abstract class GymList extends GymCollection{
+public abstract class GymList<T> extends GymCollection<T>{
 
     public abstract void order();
 
