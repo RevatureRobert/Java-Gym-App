@@ -21,24 +21,24 @@ import java.util.TreeSet;
         TODO: refactor and give generics
  */
 
-public abstract class GymCollection<T> {
+public abstract class GymCollection {
 
     /**
      * Optional size number for non expandable subclasses
      */
     protected int maxSize;
 
-    public abstract T get(T o);
+    public abstract Object get(Object o);
 
-    public abstract void add(T u) throws Exception;
+    public abstract void add(User u) throws Exception;
 
     public abstract int size();
 
-    public abstract void remove(T o);
+    public abstract void remove(Object o);
 
-    public abstract T next();
+    public abstract Object next();
 
-    public abstract T previous();
+    public abstract Object previous();
 
     public abstract String toString();
 

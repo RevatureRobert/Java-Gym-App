@@ -1,10 +1,12 @@
 package com.crunch.service;
 
+import com.crunch.db.JDBCFactory;
+import com.crunch.db.UserJDBC;
 import com.crunch.model.User;
 
 public class UserServiceTest {
 
-    UserService us = new UserService();
+    UserService us = new UserService(JDBCFactory.daoFactory(User.class));
 
     // TODO: replace with custom data structure
     //      to eliminate dependency on other methods from the same class

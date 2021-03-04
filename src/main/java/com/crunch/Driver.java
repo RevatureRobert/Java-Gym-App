@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Driver {
 
+    public static final Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
 //        System.out.println("we are in crunch");
 
@@ -23,7 +25,7 @@ public class Driver {
 
         SignUpMenu mm = new SignUpMenu();
         LoginMenu lm = new LoginMenu();
-        Scanner scan = new Scanner(System.in);
+
         boolean continueLoop = true;
         do {
             System.out.println("sign up, login or exit?");

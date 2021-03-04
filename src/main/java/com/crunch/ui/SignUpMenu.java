@@ -1,5 +1,8 @@
 package com.crunch.ui;
 
+import com.crunch.db.JDBCFactory;
+import com.crunch.db.UserJDBC;
+import com.crunch.model.User;
 import com.crunch.service.UserService;
 
 import java.util.Scanner;
@@ -19,7 +22,7 @@ public class SignUpMenu extends AbstractMenu{
 
     public void showMenu(Scanner scan){
 
-        UserService us = new UserService();
+        UserService us = new UserService(JDBCFactory.daoFactory(User.class));
         System.out.println("====Welcome to Crunch====");
         String username = "";
         // hey something is wrong

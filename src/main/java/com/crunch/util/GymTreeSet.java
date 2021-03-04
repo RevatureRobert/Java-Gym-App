@@ -2,7 +2,6 @@ package com.crunch.util;
 
 import com.crunch.model.User;
 
-<<<<<<< Updated upstream
 import java.util.Arrays;
 import java.util.Objects;
 

@@ -1,5 +1,6 @@
 package com.crunch.ui;
 
+import com.crunch.db.JDBCFactory;
 import com.crunch.model.User;
 import com.crunch.service.UserService;
 
@@ -16,7 +17,7 @@ public class LoginMenu extends AbstractMenu {
             String username = scan.nextLine();
             System.out.println("password: ");
             String password = scan.nextLine();
-            User u = new UserService().findUserByUsername(username);
+            User u = new UserService(JDBCFactory.daoFactory(User.class)).findUserByUsername(username);
             if (u == null || !u.getPassword().equals(password)) {
                 System.out.println("login failed");
             } else {

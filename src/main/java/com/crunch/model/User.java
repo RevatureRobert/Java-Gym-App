@@ -116,7 +116,7 @@ public class User extends Object {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return membership == user.membership && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Arrays.equals(activities, user.activities) && Objects.equals(phoneNumber, user.phoneNumber) && Objects.equals(email, user.email);
+        return membership == user.getMembership() && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Arrays.equals(activities, user.activities) && Objects.equals(phoneNumber, user.phoneNumber) && Objects.equals(email, user.email);
     }
 
     @Override
